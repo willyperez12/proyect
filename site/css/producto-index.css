@@ -1,0 +1,124 @@
+/* Estilos generales del cuerpo del documento */
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    width: 100%; /* Ancho del contenedor principal */
+    max-width: 1300px; /* Ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    padding: 30px; /* Espaciado interior */
+    box-sizing: border-box; /* Calcula el tamaño total incluyendo padding y borde */
+    background-color: #e9ecef; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    display: flex; /* Flexbox para alinear elementos */
+    flex-direction: column; /* Alinear elementos en columna */
+    align-items: center; /* Centrar contenido horizontalmente */
+}
+
+.texto-producto{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: large;
+}
+
+/* Filas (usadas para alinear elementos en filas flexibles) */
+.fila {
+    display: flex; /* Flexbox para alinear elementos en fila */
+    flex-wrap: wrap; /* Envolver elementos en varias líneas si no caben */
+    margin-right: -15px; /* Compensar el espacio negativo del padding de las columnas */
+    margin-left: -10px; /* Compensar el espacio negativo del padding de las columnas */
+    justify-content: center; /* Centrar contenido horizontalmente */
+}
+
+/* Columnas (usadas para dividir el espacio horizontalmente) */
+.columna {
+    padding: 15px; /* Espaciado interior */
+    box-sizing: border-box; /* Calcula el tamaño total incluyendo padding y borde */
+}
+
+/* Columna con ancho del 33.33% */
+.columna-33 {
+    width: 33.3333%; /* Ancho del 33.33% */
+}
+
+/* Estilos específicos para la columna de productos */
+.productos {
+    width: 75%; /* Ancho total para productos */
+    max-width: 1200px; /* Ancho máximo para productos */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centrar contenido horizontalmente */
+    flex-wrap: wrap; /* Envolver elementos en varias líneas si no caben */
+}
+
+/* Estilos para las tarjetas de productos */
+.productos .tarjeta {
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Borde redondeado */
+    overflow: hidden; /* Oculta el desbordamiento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición de transformación y sombra */
+    background-color: #cacaca63; /* Color de fondo */
+    width: 100%; /* Asegura que la tarjeta ocupe el ancho disponible */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+    height: 400px; /* Altura fija de la tarjeta */
+    display: flex; /* Flexbox para alinear elementos dentro de la tarjeta */
+    flex-direction: column; /* Alinear elementos en columna */
+}
+
+/* Estilos para las tarjetas de productos al pasar el mouse */
+.productos .tarjeta:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba al pasar el mouse */
+    box-shadow: 0 8px 16px rgb(255, 116, 2); /* Sombra más pronunciada */
+}
+
+/* Estilos para las imágenes dentro de las tarjetas de productos */
+.productos .imagen-tarjeta {
+    width: 100%; /* Ancho completo */
+    height: 200px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    border-top-left-radius: 10px; /* Borde redondeado superior izquierdo */
+    border-top-right-radius: 10px; /* Borde redondeado superior derecho */
+}
+
+/* Estilos para el cuerpo de las tarjetas de productos */
+.productos .cuerpo-tarjeta {
+    padding: 20px; /* Espaciado interior */
+    text-align: center; /* Alineación centrada del texto */
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca para llenar el espacio */
+}
+
+/* Estilos para el título de las tarjetas de productos */
+.productos .titulo-tarjeta {
+    margin-bottom: 0%; /* Margen inferior */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+/* Estilos para el texto de las tarjetas de productos */
+.productos .texto-tarjeta {
+    margin-bottom: 15px; /* Margen inferior */
+    font-weight: bold; /* Texto en negrita */
+    color: #495057; /* Color del texto */
+    font-size: 1.2em; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón de agregar al carrito */
+.btn-carrito {
+    background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box,
+                linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
+    border-radius: 7px;
+    border: 2px solid transparent;
+    text-shadow: 1px 1px 1px #00000040;
+    box-shadow: 8px 8px 20px 0px #45090059;
+    padding: 7px 10px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Estilos para el botón de agregar al carrito al pasar el mouse */
+.btn-carrito:hover {
+    background-color: #343a40; /* Cambia el color de fondo al pasar el mouse */
+}

@@ -1,0 +1,83 @@
+.cart-menu {
+    position: fixed;
+    top: 50px; /* Ajusta según tu diseño */
+    right: 20px; /* Ajusta según tu diseño */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: none; /* Empieza oculto */
+    z-index: 1000; /* Asegúrate de que esté por encima del resto del contenido */
+}
+
+.cart-menu.open {
+    display: block; /* Mostrar cuando esté abierto */
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: #f9f9f9;
+        --foreground: #1f2937;
+        --card: #ffffff;
+        --card-foreground: #1f2937;
+        --input: #e5e7eb;
+        --primary: #3b82f6;
+        --primary-foreground: #ffffff;
+        --secondary: #d1d5db;
+        --secondary-foreground: #1f2937;
+        --muted: #9ca3af;
+        --destructive: #ef4444;
+        --destructive-foreground: #ffffff;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply p-2 rounded-md transition-colors duration-200;
+    }
+    .btn-primary {
+        @apply bg-primary text-primary-foreground hover:bg-primary/80;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+    }
+    .btn-destructive {
+        @apply bg-destructive text-destructive-foreground hover:bg-destructive/80;
+    }
+    .form-input {
+        @apply mt-1 block w-full p-2 border border-input rounded-md bg-background text-foreground focus:ring-primary focus:border-primary;
+    }
+    .form-label {
+        @apply block text-sm font-medium text-muted;
+    }
+    .section-title {
+        @apply text-xl font-semibold mb-2 flex items-center;
+    }
+    .section-content {
+        @apply mb-6;
+    }
+    .profile-pic {
+        @apply w-24 h-24 rounded-full border border-input;
+    }
+    .file-input {
+        @apply block w-full text-sm text-muted file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/80 transition-colors duration-200;
+    }
+}
+
+
