@@ -4,10 +4,10 @@ require_once 'C:\xampp\htdocs\neumati\Config\Config.php';
 include 'admin_check.php'; // Verifica si el usuario es administrador
 
 function getDeliveryDetails($conn, $delivery_person_id) {
-    $query = "SELECT d.order_id, o.total_amount, o.name, o.email, o.address, o.city, o.state, o.zip, o.phone
+    $query = "SELECT d.order_id, o.total_amount, o.name, o.email, o.address, o.city, o.state, o.zip, o.phone, d.status
               FROM delivery d
               JOIN orders o ON d.order_id = o.order_id
-              WHERE d.delivery_person_id = ?
+              WHERE d.delivery_person_id = ? 
               ORDER BY d.delivery_date DESC";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $delivery_person_id);
@@ -15,12 +15,13 @@ function getDeliveryDetails($conn, $delivery_person_id) {
     return $stmt->get_result();
 }
 
+
 function getOrderItems($conn, $order_id) {
     $query = "SELECT nombre AS product_name, imagen, oi.quantity, oi.price
               FROM order_items oi
               JOIN productos p ON oi.product_id = p.id
               JOIN order_items pi ON p.id = pi.product_id
-              WHERE oi.order_id = ?";
+          WHERE oi.order_id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $order_id);
     $stmt->execute();
@@ -111,6 +112,7 @@ if ($deliveries->num_rows === 0) {
             <p><strong>Código Postal:</strong> <?php echo htmlspecialchars($delivery['zip']); ?></p>
             <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($delivery['phone']); ?></p>
             <p><strong>Total:</strong> $<?php echo number_format($delivery['total_amount'], 2); ?></p>
+            <p><strong>Status:</strong> <?php echo htmlspecialchars($delivery['status']); ?></p>
 
             <h2>Detalles de la Orden</h2>
             <table>
